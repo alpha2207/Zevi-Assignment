@@ -27,3 +27,9 @@
         min-width: 22rem;
     }
 }
+svg{
+    transition: .2s ease;
+    &:hover{
+        transform: scale(1.1);
+    }
+}

@@ -1,3 +1,6 @@
+.filters {
+  width: 20%;
+}
 .filters > div .option {
   display: flex;
 }/*# sourceMappingURL=filter.css.map */

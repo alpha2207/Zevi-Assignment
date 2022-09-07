@@ -1,0 +1,9 @@
+.main-container{
+    display: flex;
+    padding: 2rem;
+    .products{
+        display: grid;
+        max-width: 80%;
+        grid-template-columns: repeat(4,1fr);
+    }
+}
