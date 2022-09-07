@@ -1,0 +1,26 @@
+@mixin flexbox($justify:'center',$align:'center',$dir:'row'){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    @include flexbox();
+    margin: 2rem 0;
+}
+
+.search {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 9px 1px rgb(0 0 0 / 30%);
+    border-radius: 6px;
+    &:focus-visible{
+        border: none !important;
+    }
+
+    .search-input {
+        border: none;
+        min-width: 22rem;
+    }
+}
