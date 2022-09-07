@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.search {
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 2px 9px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+}
+.search:focus-visible {
+  border: none !important;
+}
+.search .search-input {
+  border: none;
+  min-width: 22rem;
+}/*# sourceMappingURL=searchbar.css.map */
