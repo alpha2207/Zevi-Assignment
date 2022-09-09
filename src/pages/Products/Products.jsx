@@ -6,32 +6,39 @@ import '../Products/products.css'
 
 export default function Products() {
   let [itemsList, setItemsList] = useState([]);
-  let [loading,setLoading]=useState(true);
+  let [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(true);
-    document.body.style.background='white';
+    document.body.style.background = 'white';
     fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
       .then(json => setItemsList(json));
-      setLoading(false);
+    setLoading(false);
   }, []);
 
-
+  const checkFilterFunction = (value, option) => {
+    let updatedArray=itemsList.filter(item => {
+      if (item[option] === value) {
+        return item;
+      }
+    }
+    )
+    setItemsList(updatedArray);
+  }
 
   return (
     <>
       <SearchBar />
-    {loading ? "Loading..." : <div className="main-container">
-      <Filters />
-      <div className="products">
-        {itemsList.map(item => {
-          console.log(item);
-          return <ProductList key={item.id} data={item} />
-        })
-        }
-      </div>
+      {loading ? "Loading..." : <div className="main-container">
+        <Filters checkFilterFunction={checkFilterFunction} />
+        <div className="products">
+          {itemsList.map(item => {
+            return <ProductList key={item.id} data={item} />
+          })
+          }
+        </div>
 
-    </div>}
+      </div>}
     </>
   )
 }
